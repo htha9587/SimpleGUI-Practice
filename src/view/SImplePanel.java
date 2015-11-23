@@ -1,14 +1,20 @@
 package view;
 
 import java.awt.event.*;
+
 import javax.swing.JPanel;
+
 import java.awt.event.MouseListener;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
+import javax.swing.SwingUtilities;
+
 import controller.SimpleController;
+
 import java.awt.Color;
 /**
  * 11-11-15
@@ -86,6 +92,14 @@ public class SImplePanel extends JPanel
 			public void mouseClicked(MouseEvent clicked)
 			{
 //				changeRandomColor();
+				if(SwingUtilities.isLeftMouseButton(clicked))
+				{
+					firstTextField.setText("You clicked left!");
+				}
+		else if(SwingUtilities.isRightMouseButton(clicked))
+		{
+			firstTextField.setText("You clicked right!");
+		}
 			}
 			
 			public void mouseReleased(MouseEvent released)
@@ -113,12 +127,20 @@ public class SImplePanel extends JPanel
 	{
 		public void mouseMoved(MouseEvent moved)
 		{
-			
+			firstButton.setText("Mouse X: " + moved.getX() + "Mouse Y: " + moved.getY());
+			if((moved.getX() > 25 && moved.getX() < 40) && (moved.getY() >50 && moved.getY() < 70))
+			{
+				changeRandomColor();
+				
+			}
 		}
 		
 		public void mouseDragged(MouseEvent dragged)
 		{
-			
+			if(dragged.isAltDown())
+			{
+				firstTextField.setText("You held alt and dragged!");
+			}
 		}
 	});
 }
