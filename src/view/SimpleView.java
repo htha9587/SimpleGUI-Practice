@@ -12,12 +12,12 @@ import controller.SimpleController;
 
 public class SimpleView extends JFrame
 {
-	private SimpleController baseFrame;
+	private SimpleController baseController;
 	private SImplePanel basePanel;
 	
 	public SimpleView(SimpleController baseFrame)
 	{
-		this.baseFrame = baseFrame; // Assign data member parameter.
+		this.baseController = baseFrame; // Assign data member parameter.
 		basePanel = new SImplePanel(baseFrame); // Creates SimplePanel instance with controller reference.
 		setUpFrame();
 	}
@@ -34,5 +34,8 @@ public class SimpleView extends JFrame
 		this.setVisible(true);			// Must be last line in SetupFrame method.
 	}
 	
-	
+	public SimpleController getBaseController()
+	{
+		return baseController;
+	}
 }

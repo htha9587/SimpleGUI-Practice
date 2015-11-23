@@ -1,12 +1,15 @@
 package view;
 
+import java.awt.event.*;
 import javax.swing.JPanel;
+import java.awt.event.MouseListener;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 import controller.SimpleController;
+import java.awt.Color;
 /**
  * 11-11-15
  * @author htha9587
@@ -66,6 +69,8 @@ public class SImplePanel extends JPanel
 	private void setUpListeners()
 	{
 		firstButton.addActionListener(new ActionListener()
+		
+		
 		{
 			public void actionPerformed(ActionEvent click)
 			{
@@ -74,5 +79,43 @@ public class SImplePanel extends JPanel
 		
 		});
 		
+		
+		
+		this.addMouseListener(new MouseListener()
+		{
+			public void mouseClicked(MouseEvent clicked)
+			{
+				
+			}
+			
+			public void mouseReleased(MouseEvent released)
+			{
+				
+			}
+			
+			public void mousePressed(MouseEvent pressed)
+			{
+				
+			}
+			public void mouseEntered(MouseEvent entered)
+			{
+				
+			}
+			
+			public void mouseExited(MouseEvent exited)
+			{
+				
+			}
+		});
+	}
+	private void changeRandomColor()
+	{
+		int red, green, blue;
+		
+		red = (int) (Math.random() * 256);
+		green = (int) (Math.random() * 256);
+		blue = (int) (Math.random() * 256);
+		
+		this.setBackground(new Color(red, green, blue));
 	}
 }
