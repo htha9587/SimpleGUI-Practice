@@ -107,7 +107,21 @@ public class SImplePanel extends JPanel
 //				changeRandomColor();
 			}
 		});
-	}
+	
+	
+	this.addMouseMotionListener(new MouseMotionListener()
+	{
+		public void mouseMoved(MouseEvent moved)
+		{
+			
+		}
+		
+		public void mouseDragged(MouseEvent dragged)
+		{
+			
+		}
+	});
+}
 	private void changeRandomColor()
 	{
 		int red, green, blue;
