@@ -1,14 +1,27 @@
 package view;
 
 import java.awt.event.*;
+<<<<<<< HEAD
 import javax.swing.JPanel;
+=======
+
+import javax.swing.JPanel;
+
+>>>>>>> AddWindowListeners2
 import java.awt.event.MouseListener;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
+import javax.swing.SwingUtilities;
+
 import controller.SimpleController;
+<<<<<<< HEAD
+=======
+
+>>>>>>> AddWindowListeners2
 import java.awt.Color;
 /**
  * 11-11-15
@@ -85,12 +98,28 @@ public class SImplePanel extends JPanel
 		{
 			public void mouseClicked(MouseEvent clicked)
 			{
+<<<<<<< HEAD
 				
+=======
+//				changeRandomColor();
+				if(SwingUtilities.isLeftMouseButton(clicked))
+				{
+					firstTextField.setText("You clicked left!");
+				}
+		else if(SwingUtilities.isRightMouseButton(clicked))
+		{
+			firstTextField.setText("You clicked right!");
+		}
+>>>>>>> AddWindowListeners2
 			}
 			
 			public void mouseReleased(MouseEvent released)
 			{
+<<<<<<< HEAD
 				
+=======
+				changeRandomColor();
+>>>>>>> AddWindowListeners2
 			}
 			
 			public void mousePressed(MouseEvent pressed)
@@ -99,15 +128,48 @@ public class SImplePanel extends JPanel
 			}
 			public void mouseEntered(MouseEvent entered)
 			{
+<<<<<<< HEAD
 				
+=======
+//				changeRandomColor();
+>>>>>>> AddWindowListeners2
 			}
 			
 			public void mouseExited(MouseEvent exited)
 			{
+<<<<<<< HEAD
 				
 			}
 		});
 	}
+=======
+//				changeRandomColor();
+			}
+		});
+	
+	
+	this.addMouseMotionListener(new MouseMotionListener()
+	{
+		public void mouseMoved(MouseEvent moved)
+		{
+			firstButton.setText("Mouse X: " + moved.getX() + "Mouse Y: " + moved.getY());
+			if((moved.getX() > 25 && moved.getX() < 40) && (moved.getY() >50 && moved.getY() < 70))
+			{
+				changeRandomColor();
+				
+			}
+		}
+		
+		public void mouseDragged(MouseEvent dragged)
+		{
+			if(dragged.isAltDown())
+			{
+				firstTextField.setText("You held alt and dragged!");
+			}
+		}
+	});
+}
+>>>>>>> AddWindowListeners2
 	private void changeRandomColor()
 	{
 		int red, green, blue;
